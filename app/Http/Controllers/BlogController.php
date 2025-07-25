@@ -54,11 +54,23 @@ class BlogController extends Controller
         $blog_data = DB::table('tbl_blogs')->where('blog_is_featured', true)->get();
     }
 
-    public function getBlogsPerCategory() {
-
-    }
+    // public static function getCategory(categoryID) {
+    //     DB::table('tbl_categories')->where('')
+    // }
 
     public function getRecentBlogsPerCategory() {
 
+    }
+
+
+
+    public function BlogSingle($id) {
+        $blog_data = DB::table('tbl_blogs')->where('id', $id)->first();
+        $recent_blogs = DB::table('tbl_blogs')->orderBy('blog_created_at', 'desc')->take(5)->get();
+        $data = [
+            'blog_data' => $blog_data,
+            'recent_blogs' => $recent_blogs
+        ];
+        return view('pages.blog-single', compact('data'));
     }
 }

@@ -18,7 +18,7 @@
             <p class="hero-description mb-4">Discover hidden gems, local tips, seasonal guides, and inspiring stories from anglers across Victoria. Whether you fish the Murray, cast off the coast, or wade into alpine streams — we've got you covered.</p>
 
             <div class="cta-wrapper">
-              <a href="#" class="btn btn-primary">Discover More</a>
+              <a href="#" class="btn btn-primary">Get Fishing License</a>
             </div>
           </div>
 

@@ -17,3 +17,5 @@ use App\Http\Controllers\BlogController;
 
 Route::get('/', [BlogController::class, 'frontPage']);
 
+Route::get('/blog/{id}', [BlogController::class, 'BlogSingle']);
+
