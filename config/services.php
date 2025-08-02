@@ -33,6 +33,8 @@ return [
     'shopify' => [
         'storefront_domain' => env('SHOPIFY_STOREFRONT_DOMAIN'),
         'storefront_token' => env('SHOPIFY_STOREFRONT_TOKEN'),
+        'admin_domain' => env('SHOPIFY_ADMIN_DOMAIN'),
+        'admin_token' => env('SHOPIFY_ADMIN_TOKEN'),
         'api_version' => env('SHOPIFY_API_VERSION', '2025-07'),
     ],
 ];

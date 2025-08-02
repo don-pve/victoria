@@ -12,17 +12,16 @@ class CheckoutController extends Controller
         protected ShopifyService $shopify
     ) {}
 
-    /**
-     * Handle checkout creation (variant ID only)
-     */
     public function create(Request $request)
-    {   
+    {
         $request->validate([
-            'variant_id' => 'required|string'
+            'variant_id' => 'required|string',
+            'email' => 'required|email|confirmed'
         ]);
 
         $result = $this->shopify->createCheckout(
-            $request->input('variant_id')
+            $request->input('variant_id'),
+            $request->input('email')
         );
 
         if (!isset($result['checkout']) || $result['checkout'] === null) {
@@ -35,8 +34,7 @@ class CheckoutController extends Controller
                 ->withInput();
         }
 
-
-        return redirect()->away($result['checkout']['webUrl'] . '&test=true');
+        return redirect()->away($result['checkout']['webUrl']);
     }
 
     public function index(Request $request) {
