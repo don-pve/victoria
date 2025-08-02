@@ -29,7 +29,7 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body class="index-page">
-    @include('components.front-header')
+    {{-- @include('components.front-header') --}}
 
     @yield('content')
 

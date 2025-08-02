@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,12 @@ use App\Http\Controllers\BlogController;
 Route::get('/', [BlogController::class, 'frontPage']);
 
 Route::get('/blog/{id}', [BlogController::class, 'BlogSingle']);
+
+Route::get('/fishing-license', [CheckoutController::class, 'index']);
+
+//shopify
+Route::post('/checkout', [CheckoutController::class, 'create'])->name('checkout.create');
+Route::get('/api/variant/{variantId}', [CheckoutController::class, 'getVariant']);
+
+
 
